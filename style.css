@@ -1,0 +1,65 @@
+html{
+    height: auto;
+    min-height: 100%;
+}
+
+body{
+    background: radial-gradient(blue,rgb(25, 18, 133));
+}
+
+.cube{
+
+    border: 3px solid white;
+    border-radius: 10px;
+    width: max-content;
+    margin-left: 30px;
+}
+
+#titulo{
+    color:white;
+    text-align: center;
+    margin: 0;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    border: 3px solid cyan;
+    justify-content: center;
+}
+
+.page{
+    margin-top: 5px;
+    border: 3px solid white;
+    height: 500px;
+}
+
+div h2{
+    color: white;
+    text-align: center;
+}
+
+.formulario{
+    text-align: center;
+
+}
+
+@media (max-width: 480px){
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+
+}
+
+input{
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+#enviar{
+    width: max-content;
+    margin-left: 10%;
+}
+
+}
