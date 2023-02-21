@@ -1,65 +1,33 @@
-html{
-    height: auto;
-    min-height: 100%;
-}
-
 body{
-    background: radial-gradient(blue,rgb(25, 18, 133));
+    background-color: burlywood;
 }
 
-.cube{
-
-    border: 3px solid white;
-    border-radius: 10px;
-    width: max-content;
-    margin-left: 30px;
+#reloj{
+    font-family: sans-serif;
+    font-size: 60px;
+    text-shadow: 0px 0px 1px #333;
+    color: #fff;
 }
 
-#titulo{
-    color:white;
+.reloj-contenedor{
+    background-color: rgb(12, 119, 206);
+    padding: 25px;
+    max-width: 350px;
     text-align: center;
-    margin: 0;
+    border-radius: 5px;
+    margin: 0px auto;
+    margin-top: 10%;
 }
 
-.menu{
-    display: flex;
-    flex-direction: row;
-    border: 3px solid cyan;
-    justify-content: center;
+#fecha{
+    letter-spacing: 10px;
+    font-size: 20px;
 }
 
-.page{
-    margin-top: 5px;
-    border: 3px solid white;
-    height: 500px;
-}
-
-div h2{
-    color: white;
-    text-align: center;
-}
-
-.formulario{
-    text-align: center;
-
+.animar{
+    border: rgb(0, 0, 0) 1px solid;
 }
 
 @media (max-width: 480px){
-
-.formulario{
-    display: flex;
-    flex-direction: column;
-
-}
-
-input{
-    height: 30px;
-    margin-bottom: 10px;
-}
-
-#enviar{
-    width: max-content;
-    margin-left: 10%;
-}
 
 }
