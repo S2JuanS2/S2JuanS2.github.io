@@ -1,66 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mover personaje</title>
-  <style>
-    canvas {
-      border: 1px solid black;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content= "width=device-width, user-scalable=no">
+    <title>Reloj digital</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <canvas id="lienzo" width="800" height="600"></canvas>
-  <button id="boton">mover</button>
 
-  <script>
-    var canvas = document.getElementById("lienzo");
-    var context = canvas.getContext("2d");
-    var x1 = 200;
-    var y1 = 200;
-    var x2 = 400;
-    var y2 = 200;
-    var hambre = false;
+    <div id="reloj">
+        <div class="reloj-contenedor" id="contenedor">
+            <div id="hora">00:00:00</div>
+            <div id="fecha">Lun, 00 Ene</div>
+        </div>
+    </div>
 
-    function dibujarPersonaje1() {
-        context.fillStyle = "white";
-        context.fillRect(0, 0, 400, 400);
-        context.fillStyle = "red";
-        context.fillRect(x1, y1, 5, 5);
-    }
-    function moverPersonaje1() {
-        if(hambre){
-            var direccion = Math.floor(Math.random() * 4);
-            switch (direccion) {
-              case 0:
-                y1 -= 1;
-                break;
-              case 1:
-                y1 += 1;
-                break;
-              case 2:
-                x1 -= 1;
-                break;
-              case 3:
-                x1 += 1;
-                break;
-            }
-            dibujarPersonaje1();
-        }
-    }
-
-    var boton = document.getElementById("boton");
-    boton.onclick = function() {
-        if(hambre){
-            hambre = false;
-        }else{
-            hambre = true;
-        }
-        
-    };
-
-    setInterval(moverPersonaje1, 198);
-
-  </script>
+    <script src="script.js"></script> <!-- siempre despues del codigo HTML-->
 </body>
 </html>
