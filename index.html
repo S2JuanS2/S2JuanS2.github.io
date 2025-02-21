@@ -35,7 +35,6 @@
         let sonidosActivos = [];
 
         function playSound(sound) {
-            // Elimina los sonidos que ya han terminado
             sonidosActivos = sonidosActivos.filter(s => !s.paused);
 
             if (sonidosActivos.length < maxSonidosSimultaneos) {
@@ -56,7 +55,6 @@
             }
 
             actualizar() {
-                console.log(this.velY);
                 this.velY += GRAVEDAD;
                 this.y += this.velY;
                 this.x += this.velX;
@@ -65,7 +63,7 @@
                     this.y = canvas.height - this.radio;
                     this.velY *= -0.8;
                     this.velX *= FRICCION;
-                }else{
+                } else {
                     this.velX *= FRICCION_WIND;
                 }
 
@@ -73,12 +71,11 @@
                     this.velX *= -1;
                 }
 
-                if (this.y + this.radio >= canvas.height){
-                    if(Math.abs(this.velY) > 0.5){
+                if (this.y + this.radio >= canvas.height) {
+                    if (Math.abs(this.velY) > 0.5) {
                         playSound(sonidoColision)
                     }
                 }
-
             }
 
             dibujar() {
@@ -92,15 +89,15 @@
         
         let bolitas = [];
         
-        window.addEventListener("keydown", (event) => {
-            if (event.key === "c") {
-                bolitas = [];
-            } else {
-                let nuevaBolita = new Bolita(canvas.width / 2, 20, true);
-                bolitas.push(nuevaBolita);
-            }
+        window.addEventListener("touchstart", (event) => {
+            event.preventDefault();
+            const touchX = event.touches[0].clientX;
+            const touchY = event.touches[0].clientY;
+            let nuevaBolita = new Bolita(touchX, touchY, true);
+            bolitas.push(nuevaBolita);
         });
 
+        // Animación
         function animar() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             bolitas.forEach(bolita => {
