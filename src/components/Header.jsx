@@ -8,13 +8,15 @@ function Header(){
                         <h1 className="font-bold text-3xl text-white">Decision Board</h1>
                     </div>
                     <div className="text-right">
-                    <a href="" className=" text-white hover:underline">Read more</a>
+                    <a href="" className=" text-white hover:underline">Read more &gt;</a>
                     </div>
                 </div>
                 <div className="flex justify-end mt-9 mr-50">
-                    <img src="/images/config-sec-img.png" alt="home"  className="w-10 h-10 mr-4 transition-transform duration-300 hover:scale-120 cursor-pointer"/>
                     <div className="flex flex-col items-center">
-                        <img src="/images/user-img.png" alt="home" className="w-16 h-16  transition-transform duration-300 hover:scale-120 cursor-pointer"/>
+                        <img src="/images/config-img.png" alt="config"  className="w-8 h-8 mr-2 mt-2 transition-transform duration-300 hover:scale-120 cursor-pointer"/>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <img src="/images/user-img.png" alt="user" className="w-16 h-16  transition-transform duration-300 hover:scale-120 cursor-pointer"/>
                         <p className="font-bold text-white pt-1">S2JuanS2</p>
                     </div>
                 </div>

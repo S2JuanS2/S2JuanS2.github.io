@@ -33,10 +33,12 @@ function App(){
     return(
       <div>
         <Header></Header>
-        <Nav></Nav>
-        <Title></Title>
-        <Board></Board>
-        <Footer></Footer>
+        <div className="ml-45 mr-45">
+          <Nav></Nav>
+          <Title></Title>
+          <Board></Board>
+          <Footer></Footer>
+        </div>
       </div>
     );
   }
