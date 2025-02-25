@@ -8,7 +8,7 @@ function Card({children}){
                 {/*
                 <p className="text-white font-bold">7</p>
                 */}
-                <img src="src/assets/images/delete.png" alt="delete" className="w-6 h-6 mr-3 cursor-pointer transition-transform duration-300 hover:scale-120"/>
+                <img src="/src/assets/images/delete.png" alt="delete" className="w-6 h-6 mr-3 cursor-pointer transition-transform duration-300 hover:scale-120"/>
             </div>
         </div>
     )
