@@ -19,9 +19,9 @@ function Board(){
                     <NumberInput></NumberInput>
                 </div>
                 <div className="flex flex-row justify-between">
-                    <img src="/src/assets/images/load.png" alt="" className="w-8 h-8 ml-2 mt-2 cursor-pointer"/>
+                    <img src={`${process.env.PUBLIC_URL}/images/load.png`} alt="" className="w-8 h-8 ml-2 mt-2 cursor-pointer"/>
                     <h3 className='mt-3 text-white font-medium'>Ingresar</h3>
-                    <img src="/src/assets/images/load.png" alt="" className="w-8 h-8 mr-2 mt-2 cursor-pointer transform rotate-180"/>
+                    <img src={`${process.env.PUBLIC_URL}/images/load.png`} alt="" className="w-8 h-8 mr-2 mt-2 cursor-pointer transform rotate-180"/>
                 </div>
             </div>
             <CardList customClass="text-red-500" items={contras}>CONTRAS</CardList>
