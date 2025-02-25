@@ -4,7 +4,7 @@ function Header(){
             <div className="flex justify-between h-30 pb-36">
                 <div className="mt-9 ml-45">
                     <div className="flex flex-row">
-                        <img src={`${process.env.PUBLIC_URL}/images/home-img.png`} alt="" className="w-8 h-8 mr-4 transition-transform duration-300 hover:scale-120 cursor-pointer"/>
+                        <img src="/images/home-img.png" alt="" className="w-8 h-8 mr-4 transition-transform duration-300 hover:scale-120 cursor-pointer"/>
                         <h1 className="font-bold text-3xl text-white">Decision Board</h1>
                     </div>
                     <div className="text-right">
@@ -17,9 +17,9 @@ function Header(){
                     </div>
                 </div>
                 <div className="flex justify-end mt-9 mr-45">
-                    <img src={`${process.env.PUBLIC_URL}/images/config-sec-img.png`} alt=""  className="w-10 h-10 mr-4 transition-transform duration-300 hover:scale-120 cursor-pointer"/>
+                    <img src="/images/config-sec-img.png" alt=""  className="w-10 h-10 mr-4 transition-transform duration-300 hover:scale-120 cursor-pointer"/>
                     <div className="flex flex-col items-center">
-                        <img src={`${process.env.PUBLIC_URL}/images/user-img.png`} alt="" className="w-16 h-16  transition-transform duration-300 hover:scale-120 cursor-pointer"/>
+                        <img src="/images/user-img.png" alt="" className="w-16 h-16  transition-transform duration-300 hover:scale-120 cursor-pointer"/>
                         <p className="font-bold text-white pt-1">S2JuanS2</p>
                     </div>
                 </div>
