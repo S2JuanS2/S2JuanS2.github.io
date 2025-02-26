@@ -8,7 +8,7 @@ function Button({title}){
 
     return (
         <>
-            <button className="border-2 rounded-3xl pl-4 pr-4 border-blue-600 bg-blue-700 text-white font-bold font-sans w-fit cursor-pointer hover:border-b-blue-50 transition-colors duration-300"
+            <button className="border-2 rounded-r-sm pl-4 pr-4 border-blue-600 bg-blue-700 text-white font-bold font-sans w-fit cursor-pointer hover:border-b-blue-50 transition-colors duration-300"
                     onClick={messageAlert}
             >
                 {title}

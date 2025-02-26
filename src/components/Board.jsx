@@ -8,10 +8,19 @@ function Board(){
     const [contras, setContras] = useState([]);
 
     const handleAddFactor = (text, type) => {
+
         if (type === 'PRO') {
-            setPros((prevPros) => [...prevPros, text]);
+            if (!pros.includes(text)){
+                setPros((prevPros) => [...prevPros, text]);
+            }else{
+                alert("[ERROR]: Este PRO ya está incluído!");
+            }
         } else if (type === 'CONTRA') {
-            setContras((prevContras) => [...prevContras, text]);
+            if (!contras.includes(text)){
+                setContras((prevContras) => [...prevContras, text]);
+            }else{
+                alert("[ERROR]: Esta CONTRA ya está incluída!");
+            }
         }
     };
 
@@ -26,7 +35,7 @@ function Board(){
     return (
         <div>
             <AddFactor onAddFactor={handleAddFactor}></AddFactor>
-            <div className="flex justify-between gap-x-10 mt-8 mb-50">
+            <div className="flex justify-between gap-x-10 mt-8">
                 <CardList customClass="text-green-400" items={pros} title="PROS" onDelete={handleDelete} type="PRO"></CardList>
                 <CardList customClass="text-red-500" items={contras} title="CONTRAS" onDelete={handleDelete} type="CONTRA">CONTRAS</CardList>
             </div>

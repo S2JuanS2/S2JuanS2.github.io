@@ -3,9 +3,9 @@ import {useState, useEffect} from "react";
 import Board from "./components/Board";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Nav from "./components/Nav";
 import Title from "./components/Title";
 import Mobile from "./components/Mobile";
+import Decision from "./components/Decision";
 
 function App(){
 
@@ -34,9 +34,13 @@ function App(){
       <div>
         <Header></Header>
         <div className="ml-45 mr-45">
-          <Nav></Nav>
-          <Title></Title>
+          <div className="flex">
+            <Title></Title>
+          </div>
           <Board></Board>
+          <Decision></Decision>
+        </div>
+        <div className="mt-40">
           <Footer></Footer>
         </div>
       </div>

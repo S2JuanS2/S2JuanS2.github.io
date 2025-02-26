@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Nav from "./Nav";
 
 function Title(){
 
@@ -18,7 +19,7 @@ function Title(){
     }
 
     return (
-        <div className="flex flex-col items-center mt-5">
+        <div className="flex flex-col items mt-35">
             <div className="flex">
                 {isEditing ? (
                     <input 
@@ -39,11 +40,14 @@ function Title(){
                     onClick={toggleEditing}
                 />
             </div>
-            <img 
-                src="/images/confused.png" 
-                alt="confused" 
-                className="shadow-lg mt-4"
-            />
+            <div className="flex">
+                <img 
+                    src="/images/toma-de-decisiones.png" 
+                    alt="confused" 
+                    className="shadow-lg mt-2 ml-2 h-20 w-20 mb-4"
+                />
+                <Nav></Nav>
+            </div>
         </div>
     );
 }

@@ -24,9 +24,12 @@ function AddFactor({onAddFactor}){
     };
 
     return(
-        <div >
-            <h1 className="text-white mb-2 mt-8">Nueva pro o contra</h1>
-            <div className="flex justify-between mt-2">
+        <div>
+            <div className="flex justify-between">
+                <h1 className="text-white mb-1 mt-4">Piensa... ¿Qué puede malir sal?</h1>
+                <h1 className="text-white mb-1 mt-4 mr-34">Ponderación</h1>
+            </div>
+            <div className="flex justify-between">
                 <textarea   
                     className="border-2 border-blue-400 text-white rounded-b-md resize-none overflow-hidden h-10 w-11/12 pl-2 pr-2 pt-1 mr-2 mb-8 bg-gray-900" 
                     type="text" 
