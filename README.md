@@ -4,15 +4,15 @@
    <br>
    <br>
    <p>
-      <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/S2JuanS2/S2JuanS2.github.io/build.yml?style=for-the-badge">
-      <img alt="Uptime Robot status" src="https://img.shields.io/uptimerobot/status/m798436758-71702e52aafc0c8a3ee917a2?style=for-the-badge&label=API">
-      <img alt="GitHub deployments" src="https://img.shields.io/github/deployments/S2JuanS2/S2JuanS2.github.io/Production?style=for-the-badge&label=production">
+      <img alt="Static Badge" src="https://img.shields.io/badge/App-Under%20construction-blue">
       <img alt="GitHub License" src="https://img.shields.io/github/license/S2JuanS2/S2JuanS2.github.io?style=for-the-badge">
    </p>
 
 </div>
 
 ## Introducción
+
+{Completar}
 
 > [!NOTE]
 > Scripts
@@ -30,7 +30,7 @@
 - [Backend]()
 
 > [!IMPORTANT]
-> Dado que la API esta hosteada en un servidor gratuito, la primera vez que se realice una petición a la API, esta tardará en responder debido a que el servidor se encuentra en estado de suspensión.
+>
 
 ## Documentación de la API
 
@@ -62,9 +62,9 @@
 
 ### Stack
 
-- [![Spring boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot) - Spring Boot.
-- [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/) - PostgreSQL.
-- [![Junit5](https://img.shields.io/badge/Junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white)](https://junit.org/junit5/) - Junit5.
+- [![Spring boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
+- [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+- [![Junit5](https://img.shields.io/badge/Junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white)](https://junit.org/junit5/)
 
 ## Frontend
 
@@ -89,8 +89,8 @@ npm run dev
 
 ### Stack
 
-- [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/) - React.
-- [![Tailwind CSS](   https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/) - Tailwind CSS.
+- [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+- [![Tailwind CSS](   https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
 ## Licencia
 
