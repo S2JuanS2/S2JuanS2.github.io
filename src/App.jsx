@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Title from "./components/Title";
 import Mobile from "./components/Mobile";
 import Decision from "./components/Decision";
+import ServerStatus from "./components/ServerStatus";
 
 function App(){
 
@@ -39,6 +40,7 @@ function App(){
           </div>
           <Board></Board>
           <Decision></Decision>
+          <ServerStatus></ServerStatus>
         </div>
         <div className="mt-40">
           <Footer></Footer>

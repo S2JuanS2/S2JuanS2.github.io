@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 function Decision() {
@@ -7,6 +7,18 @@ function Decision() {
     const [jumpAzar, setJumpAzar] = useState(false);
     const [jumpIA, setJumpIA] = useState(false);
 
+    const [decisionApi, setDecisionApi] = useState("");
+
+    const handleClick = async () => {
+        try {
+            const response = await fetch("http://localhost:8080/api/decision");
+            const data = await response.text();
+            setDecisionApi(data);
+        }catch(error){
+            console.error("Error:", error);
+        }
+    }
+      
     const handleJump = (setJumpFn) => {
         setJumpFn(true);
         setTimeout(() => setJumpFn(false), 400);
@@ -32,7 +44,7 @@ function Decision() {
                     className="h-16 w-16 cursor-pointer"
                     animate={jumpAzar ? { y: [0, -10, 0, -5, 0] } : {}}
                     transition={{ duration: 0.4 }}
-                    onClick={() => handleJump(setJumpAzar)}
+                    onClick={() => { handleJump(setJumpAzar), handleClick(); }}
                 />
                 <h3 className="font-serif text-blue-300 mt-2">Azar</h3>
             </div>
