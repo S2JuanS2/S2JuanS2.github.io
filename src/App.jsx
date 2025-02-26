@@ -37,7 +37,7 @@ function App(){
           <Decision></Decision>
           <ServerStatus></ServerStatus>
         </div>
-        <div className="mt-40">
+        <div className="mt-10">
           <Footer></Footer>
         </div>
       </div>
@@ -55,7 +55,7 @@ function App(){
           <Decision></Decision>
           <ServerStatus></ServerStatus>
         </div>
-        <div className="mt-40">
+        <div className="mt-10">
           <Footer></Footer>
         </div>
       </div>
