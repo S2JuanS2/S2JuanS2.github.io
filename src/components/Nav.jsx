@@ -4,9 +4,9 @@ function Nav(){
     return(
         <div className="w-fit mt-5">
             <div className="flex space-x-5">
-                <Button>New Board</Button>
-                <Button>Clean Board</Button>
-                <Button>Share Board</Button>
+                <Button title="Nueva"></Button>
+                <Button title="Borrar"></Button>
+                <Button title="Compartir"></Button>
             </div>
         </div>
     );
