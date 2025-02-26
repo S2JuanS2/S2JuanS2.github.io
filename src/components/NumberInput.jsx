@@ -17,10 +17,10 @@ function NumberInput(){
     };
 
     return(
-        <div className="flex justify-center mb-2">
-            <button className="text-white bg-gray-700 border-gray-800 focus:outline-none w-6 h-10 cursor-pointer rounded-l-md font-bold border-1 hover:border-gray-400 transition-colors duration-300" onClick={decrement}>-</button>
-            <input type="text" className="text-white text-center border border-gray-400 w-8 font-bold bg-blue-800" value={count} readOnly/>
-            <button className="text-white bg-gray-700 border-gray-800 focus:outline-none w-6 cursor-pointer rounded-r-md font-bold border-1 hover:border-gray-400 transition-colors duration-300" onClick={increment}>+</button>
+        <div className="flex justify-center">
+            <button className="text-white bg-gray-700 border-gray-800 focus:outline-none w-6 h-7 cursor-pointer rounded-l-md font-bold border-1 hover:border-gray-400 transition-colors duration-300" onClick={decrement}>-</button>
+            <input type="text" className="text-white text-center border border-gray-400 w-8 h-7 font-bold bg-blue-800" value={count} readOnly/>
+            <button className="text-white bg-gray-700 border-gray-800 focus:outline-none w-6 h-7 cursor-pointer rounded-r-md font-bold border-1 hover:border-gray-400 transition-colors duration-300" onClick={increment}>+</button>
         </div>
     )
 }

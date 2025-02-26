@@ -35,7 +35,7 @@ function Board(){
     return (
         <div>
             <AddFactor onAddFactor={handleAddFactor}></AddFactor>
-            <div className="flex justify-between gap-x-10 mt-8">
+            <div className="flex justify-between space-x-10 mt-8">
                 <CardList customClass="text-green-400" items={pros} title="PROS" onDelete={handleDelete} type="PRO"></CardList>
                 <CardList customClass="text-red-500" items={contras} title="CONTRAS" onDelete={handleDelete} type="CONTRA">CONTRAS</CardList>
             </div>

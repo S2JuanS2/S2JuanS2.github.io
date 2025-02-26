@@ -4,7 +4,7 @@ function Card({children, colorClass, onDelete}){
     return(
         <div className="flex justify-center mt-2">
             <div className={`flex justify-between w-full min-h-8 text-blue-400 items-center ${colorClass} bg-blue-900`}>
-                <p className='p-1 pl-3 text-white font-mono overflow-auto break-words'>{children}</p>
+                <p className='p-1 pl-3 text-white font-mono overflow-auto break-all'>{children}</p>
                 <img 
                     src="/images/borrar.png" 
                     alt="delete" 

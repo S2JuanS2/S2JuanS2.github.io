@@ -27,13 +27,26 @@ function App(){
   if(isMobile){
     return(
       <div>
-        <Mobile></Mobile>
+        <div>
+        <Header classMobileL="ml-5" classMobileR="mr-5"></Header>
+        <div className="ml-5 mr-5">
+          <div className="flex">
+            <Title></Title>
+          </div>
+          <Board></Board>
+          <Decision></Decision>
+          <ServerStatus></ServerStatus>
+        </div>
+        <div className="mt-40">
+          <Footer></Footer>
+        </div>
+      </div>
       </div>
     );
   }else{
     return(
       <div>
-        <Header></Header>
+        <Header classMobileL="ml-45" classMobileR="mr-45"></Header>
         <div className="ml-45 mr-45">
           <div className="flex">
             <Title></Title>
