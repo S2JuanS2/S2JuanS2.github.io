@@ -5,6 +5,8 @@
    <br>
    <p>
       <img alt="Static Badge" src="https://img.shields.io/badge/App-Under%20construction-blue">
+   </p>
+   <p>
       <img alt="GitHub License" src="https://img.shields.io/github/license/S2JuanS2/S2JuanS2.github.io?style=for-the-badge">
    </p>
 
