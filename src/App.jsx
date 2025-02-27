@@ -1,60 +1,18 @@
-import {useState, useEffect} from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ThinksPick from "./pages/ThinksPick";
+import NotFound from "./pages/NotFound";
+import About from "./pages/About";
 
-import Board from "./components/Board";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Title from "./components/Title";
-
-function App(){
-
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return() =>{
-      window.removeEventListener("resize", handleResize);
-    };
-  },[]);
-
-  if(isMobile){
-    return(
-      <div>
-        <div>
-        <Header classMobileL="ml-5" classMobileR="mr-5"></Header>
-        <div className="ml-5 mr-5">
-          <div className="flex">
-            <Title></Title>
-          </div>
-          <Board></Board>
-        </div>
-        <div className="mt-10">
-          <Footer></Footer>
-        </div>
-      </div>
-      </div>
-    );
-  }else{
-    return(
-      <div>
-        <Header classMobileL="ml-45" classMobileR="mr-45"></Header>
-        <div className="ml-45 mr-45">
-          <div className="flex">
-            <Title></Title>
-          </div>
-          <Board></Board>
-        </div>
-        <div className="mt-10">
-          <Footer></Footer>
-        </div>
-      </div>
-    );
-  }
-
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/thinks-pick" element={<ThinksPick />} />
+        <Route path="/thinks-pick/about" element={<About />}/>q
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const ServerStatus = ({ status }) => {
-  const [serverStatus, setServerStatus] = useState({ message: "Checking...", online: false});
+  const [serverStatus, setServerStatus] = useState({ message: "Revisando conexión...", online: false});
 
   useEffect(() => {
     const checkServer = async () => {
@@ -9,20 +9,20 @@ const ServerStatus = ({ status }) => {
         const response = await fetch("http://localhost:8080/api/health");
         if (response.ok) {
           const data = await response.json();
-          setServerStatus({message: data.status === "ON" ? "🟢 Online" : "🔴 Offline", online: true});
+          setServerStatus({message: data.status === "ON" ? "🟢 En línea" : "🔴 Sin conexión", online: true});
           status(true);
         } else {
-          setServerStatus({message: "🔴 Offline", online: false});
+          setServerStatus({message: "🔴 Sin conexión", online: false});
           status(false);
         }
       } catch (error) {
-        setServerStatus({message:"🔴 Offline", online:false});
+        setServerStatus({message:"🔴 Sin conexión", online:false});
         status(false);
       }
     };
 
     checkServer();
-    const interval = setInterval(checkServer, 60000); // Verifica cada 5 segundos
+    const interval = setInterval(checkServer, 240000); // Verifica cada 5 segundos
     return () => clearInterval(interval);
   }, []);
 
