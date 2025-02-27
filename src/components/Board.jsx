@@ -1,34 +1,38 @@
 import React, { useState } from 'react';
 import CardList from "./CardList";
 import AddFactor from './AddFactor';
+import { image } from 'framer-motion/client';
 
 function Board(){
 
     const [pros, setPros] = useState([]);
     const [contras, setContras] = useState([]);
 
-    const handleAddFactor = (text, type) => {
+    const handleAddFactor = (text, weight, impact, type) => {
+
+        const newFactor = {text, weight, impact, type};
 
         if (type === 'PRO') {
-            if (!pros.includes(text)){
-                setPros((prevPros) => [...prevPros, text]);
+            if (!pros.some(factor => factor.text == text)){
+                setPros((prevPros) => [...prevPros, newFactor]);
             }else{
                 alert("[ERROR]: Este PRO ya está incluído!");
             }
         } else if (type === 'CONTRA') {
-            if (!contras.includes(text)){
-                setContras((prevContras) => [...prevContras, text]);
+            if (!contras.some(factor => factor.text == text)){
+                setContras((prevContras) => [...prevContras, newFactor]);
             }else{
                 alert("[ERROR]: Esta CONTRA ya está incluída!");
             }
         }
     };
 
-    const handleDelete = (text, type) => {
+    const handleDelete = (factor, type) => {
+        console.log(factor.text);
         if (type === 'PRO') {
-            setPros((prevPros) => prevPros.filter((item) => item !== text));
+            setPros((prevPros) => prevPros.filter((item) => item !== factor));
         } else if (type === 'CONTRA') {
-            setContras((prevContras) => prevContras.filter((item) => item !== text));
+            setContras((prevContras) => prevContras.filter((item) => item !== factor));
         }
     };
 

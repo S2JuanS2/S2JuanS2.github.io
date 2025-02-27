@@ -4,22 +4,36 @@ import NumberInput from './NumberInput';
 function AddFactor({onAddFactor}){
 
     const[factorText, setFactorText] = useState("");
+    const[factorWeight, setFactorWeight] = useState(0);
+    const[factorImpact, setFactorImpact] = useState(0);
 
     const handleTextChange = (e) => {
         setFactorText(e.target.value);
     }
 
+    const handleWeightChange = (newWeight) => {
+        setFactorWeight(newWeight);
+    }
+
+    const handleImpactChange = (newImpact) => {
+        setFactorImpact(newImpact);
+    }
+
     const handleAddPro = () => {
         if (factorText.trim()) {
-            onAddFactor(factorText, 'PRO');
+            onAddFactor(factorText, factorWeight, factorImpact, 'PRO');
             setFactorText("");
+            setFactorImpact(0);
+            setFactorWeight(0);
         }
     };
     
     const handleAddContra = () => {
         if (factorText.trim()) {
-            onAddFactor(factorText, 'CONTRA');
+            onAddFactor(factorText, factorWeight, factorImpact, 'CONTRA');
             setFactorText("");
+            setFactorImpact(0);
+            setFactorWeight(0);
         }
     };
 
@@ -38,11 +52,11 @@ function AddFactor({onAddFactor}){
                 <div className="flex flex-row justify-center space-x-5 mb-5 ml-3">
                     <div className="text-center">
                         <h1 className="text-white text-sm mb-1">Peso</h1>
-                        <NumberInput></NumberInput>
+                        <NumberInput value={factorWeight} onChange={handleWeightChange} maxCount={5}></NumberInput>
                     </div>
                     <div className="text-center">
                         <h1 className="text-white text-sm mb-1">Impacto</h1>
-                        <NumberInput></NumberInput>
+                        <NumberInput value={factorImpact} onChange={handleImpactChange} maxCount={3}></NumberInput>
                     </div>
                     <div className=" mt-5">
                         <button 

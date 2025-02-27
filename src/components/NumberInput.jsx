@@ -1,18 +1,24 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
-function NumberInput(){
+function NumberInput({ value = 0, onChange, maxCount}){
 
     const [count, setCount] = useState(0);
 
+    useEffect(() => {
+        setCount(value ?? 0);
+    }, [value]);
+
     const increment = () => {
-        if(count+1 <= 10){
-            setCount(count +1);
+        if(count+1 <= maxCount){
+            setCount(count + 1);
+            onChange(count + 1);
         }
     };
 
     const decrement = () => {
         if(count-1 >= 0){
-            setCount(count -1);
+            setCount(count - 1);
+            onChange(count - 1);
         }
     };
 
