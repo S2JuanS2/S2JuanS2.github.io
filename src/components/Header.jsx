@@ -21,14 +21,14 @@ function Header(){
             <div className="flex justify-between pb-5 bg-blue-900">
                 <div className={`mt-5 ${isMobile ? "ml-5" : "ml-45"}`}>
                     <div className="flex flex-row">
-                        <a href="/thinks-pick">
+                        <a href="/#/thinks-pick">
                             <img src="/images/logo.png" alt="home" className="w-40 h-18 scale-120 transition-transform duration-300 hover:scale-140 cursor-pointer"/>
                         </a>
                     </div>
                 </div>
                 <div className={`flex justify-end mt-5 ${isMobile ? "mr-5" : "mr-45"}`}>
                     <div className="flex flex-col items-center">
-                        <a href="/thinks-pick/about">
+                        <a href="/#/thinks-pick/about">
                             <img src="/images/info.png" alt="config"  className="w-7 h-7 mr-2 transition-transform duration-300 hover:scale-120 cursor-pointer"/>
                         </a>
                     </div>
