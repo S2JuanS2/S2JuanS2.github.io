@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const ServerStatus = () => {
+const ServerStatus = ({ status }) => {
   const [serverStatus, setServerStatus] = useState({ message: "Checking...", online: false});
 
   useEffect(() => {
@@ -10,11 +10,14 @@ const ServerStatus = () => {
         if (response.ok) {
           const data = await response.json();
           setServerStatus({message: data.status === "ON" ? "🟢 Online" : "🔴 Offline", online: true});
+          status(true);
         } else {
           setServerStatus({message: "🔴 Offline", online: false});
+          status(false);
         }
       } catch (error) {
         setServerStatus({message:"🔴 Offline", online:false});
+        status(false);
       }
     };
 

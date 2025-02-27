@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CardList from "./CardList";
 import AddFactor from './AddFactor';
-import { image } from 'framer-motion/client';
+import Decision from './Decision';
 
 function Board(){
 
@@ -9,9 +9,7 @@ function Board(){
     const [contras, setContras] = useState([]);
 
     const handleAddFactor = (text, weight, impact, type) => {
-
         const newFactor = {text, weight, impact, type};
-
         if (type === 'PRO') {
             if (!pros.some(factor => factor.text == text)){
                 setPros((prevPros) => [...prevPros, newFactor]);
@@ -43,6 +41,7 @@ function Board(){
                 <CardList customClass="text-green-400" items={pros} title="PROS" onDelete={handleDelete} type="PRO"></CardList>
                 <CardList customClass="text-red-500" items={contras} title="CONTRAS" onDelete={handleDelete} type="CONTRA">CONTRAS</CardList>
             </div>
+            <Decision itemsPros={pros} itemsContras={contras}></Decision>
         </div>
     );
 }

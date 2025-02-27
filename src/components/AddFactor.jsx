@@ -37,6 +37,8 @@ function AddFactor({onAddFactor}){
         }
     };
 
+    const isButtonDisabled = factorWeight <= 0 || factorImpact <= 0 || factorText.length === 0;
+
     return(
         <div>
             <h1 className="text-white mb-1 mt-4">Piensa... ¿Qué puede malir sal?</h1>   
@@ -59,15 +61,21 @@ function AddFactor({onAddFactor}){
                         <NumberInput value={factorImpact} onChange={handleImpactChange} maxCount={3}></NumberInput>
                     </div>
                     <div className=" mt-5">
-                        <button 
-                            className="text-white bg-green-500 focus:outline-none w-auto cursor-pointer rounded-l-md font-bold p-1 pl-2 pr-2 h-8 border-1 border-black hover:border-1 hover:border-white transition-colors duration-300"
+                        <button
+                            className={`text-white focus:outline-none w-auto rounded-l-md font-bold p-1 pl-2 pr-2 h-8 border-1 border-black transition-colors duration-300 ${
+                                isButtonDisabled ? "bg-gray-500 cursor-not-allowed" : "hover:border-white bg-green-500 cursor-pointer"
+                            }`}
                             onClick={handleAddPro}
+                            disabled={isButtonDisabled}
                             >
                             PRO
                         </button>
-                        <button 
-                            className="text-white bg-red-500 focus:outline-none w-auto cursor-pointer rounded-r-md font-bold p-1 pr-2 h-8 border-1 border-black hover:border-1 hover:border-white transition-colors duration-300"
+                        <button
+                            className={`text-white focus:outline-none w-auto rounded-r-md font-bold p-1 pr-2 h-8 border-1 border-black transition-colors duration-300 ${
+                                isButtonDisabled ? "bg-gray-500 cursor-not-allowed" : "hover:border-white bg-red-500 cursor-pointer"
+                            }`}
                             onClick={handleAddContra}
+                            disabled={isButtonDisabled}
                             >
                             CONTRA
                         </button>

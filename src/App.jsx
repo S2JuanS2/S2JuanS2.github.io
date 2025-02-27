@@ -4,9 +4,6 @@ import Board from "./components/Board";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Title from "./components/Title";
-import Mobile from "./components/Mobile";
-import Decision from "./components/Decision";
-import ServerStatus from "./components/ServerStatus";
 
 function App(){
 
@@ -34,8 +31,6 @@ function App(){
             <Title></Title>
           </div>
           <Board></Board>
-          <Decision></Decision>
-          <ServerStatus></ServerStatus>
         </div>
         <div className="mt-10">
           <Footer></Footer>
@@ -52,8 +47,6 @@ function App(){
             <Title></Title>
           </div>
           <Board></Board>
-          <Decision></Decision>
-          <ServerStatus></ServerStatus>
         </div>
         <div className="mt-10">
           <Footer></Footer>
