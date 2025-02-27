@@ -32,6 +32,7 @@ function ReadMore (){
                     </div>
                     <h1 className="mb-5 mt-10 text-white font-bold underline">CRÉDITOS</h1>
                     <a href="https://www.flaticon.es/" title="trabajo en equipo iconos" className="text-white underline underline-offset-5">Iconos creados por srip - Flaticon</a>
+                    <a href="https://pixabay.com/es/users/b_chauhan-47828121/?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=16843">Bina Chauhan</a> de <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=16843">Pixabay</a>
                 </div>
             </div>
             <Footer></Footer>

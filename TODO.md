@@ -11,14 +11,12 @@
 - [ ] Cambiar input númerico de peso e impacto por input selection (irrelevante-relevante)(bajo impacto-alto impacto).
 - [ ] Cambiar input texto del titulo por input dropdown con ejemplo (debería comprar..).
 - [ ] Cambiar la imagen del botón para cambiar el titulo (o eliminar sea el caso).
-- [ ] Cambiar logo del header.
 - [ ] Mejor visualización de la cantidad en los pro-contras
 - [ ] Cambiar el formato de visualización del peso e impacto (0-0) por posibles imagenes según el caso.
 
 ---
 
 ## 🚀 Nuevas Funcionalidades
-- [ ] Implementar DOM
 - [ ] Implemetar la decisión del azar.
 - [ ] Explicación del cálculo en la decisión cálculo.
 - [ ] Contenedor para mostrar la decisión.
@@ -39,5 +37,5 @@
 ---
 
 ## ✅ Completado
-- [x]
-- [x] 
+- [x] Implementar DOM
+- [x] Cambiar logo del header.

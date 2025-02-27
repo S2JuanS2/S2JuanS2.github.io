@@ -6,10 +6,10 @@ const ServerStatus = ({ status }) => {
   useEffect(() => {
     const checkServer = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/health");
+        const response = await fetch("https://squad9-2024-2c.onrender.com/api/projects");
         if (response.ok) {
           const data = await response.json();
-          setServerStatus({message: data.status === "ON" ? "🟢 En línea" : "🔴 Sin conexión", online: true});
+          setServerStatus({message: response.ok ? "🟢 En línea" : "🔴 Sin conexión", online: true});
           status(true);
         } else {
           setServerStatus({message: "🔴 Sin conexión", online: false});
@@ -22,7 +22,7 @@ const ServerStatus = ({ status }) => {
     };
 
     checkServer();
-    const interval = setInterval(checkServer, 240000); // Verifica cada 5 segundos
+    const interval = setInterval(checkServer, 240000);
     return () => clearInterval(interval);
   }, []);
 
