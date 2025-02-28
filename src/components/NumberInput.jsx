@@ -1,34 +1,41 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
-function NumberInput({ value = 0, onChange, maxCount}){
+function NumberInput({ value = 0, onChange, options }) {
+  const [count, setCount] = useState(value);
 
-    const [count, setCount] = useState(0);
+  useEffect(() => {
+    setCount(value ?? 0);
+  }, [value]);
 
-    useEffect(() => {
-        setCount(value ?? 0);
-    }, [value]);
+  const handleChange = (newValue) => {
+    setCount(newValue);
+    onChange(newValue);
+  };
 
-    const increment = () => {
-        if(count+1 <= maxCount){
-            setCount(count + 1);
-            onChange(count + 1);
-        }
-    };
-
-    const decrement = () => {
-        if(count-1 >= 0){
-            setCount(count - 1);
-            onChange(count - 1);
-        }
-    };
-
-    return(
-        <div className="flex justify-center">
-            <button className="text-white bg-gray-700 border-gray-800 focus:outline-none w-6 h-7 cursor-pointer rounded-l-md font-bold border-1 hover:border-gray-400 transition-colors duration-300" onClick={decrement}>-</button>
-            <input type="text" className="text-white text-center border border-gray-400 w-8 h-7 font-bold bg-blue-800" value={count} readOnly/>
-            <button className="text-white bg-gray-700 border-gray-800 focus:outline-none w-6 h-7 cursor-pointer rounded-r-md font-bold border-1 hover:border-gray-400 transition-colors duration-300" onClick={increment}>+</button>
-        </div>
-    )
+  return (
+    <div className="flex flex-col w-32">
+      {options.map((option, index) => (
+        <label key={index} className="cursor-pointer">
+          <input
+            type="radio"
+            name="number-input"
+            value={index}
+            checked={count === index}
+            onChange={() => handleChange(index)}
+            className="hidden"
+          />
+          <div
+            className={`${
+                index === 0 ? "pb-3 rounded-sm"
+              : count === index ? "bg-blue-800" : "bg-gray-700"
+            } text-white text-sm p-2 pb-3 h-8 flex items-center justify-center rounded-lg font-bold border-2 border-gray-800 hover:border-gray-400 transition-colors duration-300`}
+          >
+            {option}
+          </div>
+        </label>
+      ))}
+    </div>
+  );
 }
 
-export default NumberInput
+export default NumberInput;

@@ -51,16 +51,15 @@ function AddFactor({onAddFactor}){
                     placeholder="Es muy costoso" 
                     maxLength={80}
                 />
-                <div className="flex flex-row justify-center space-x-5 mb-5 ml-3">
-                    <div className="text-center">
-                        <h1 className="text-white text-sm mb-1">Peso</h1>
-                        <NumberInput value={factorWeight} onChange={handleWeightChange} maxCount={5}></NumberInput>
+                <div className="flex justify-center space-x-10 mb-5 ml-3">
+                    <div className="mb-4">
+                        <NumberInput value={factorWeight} onChange={handleWeightChange} options={['Peso', 'Insignificante', 'Mínimo', 'Moderado', 'Significativo', 'Crucial']}></NumberInput>
                     </div>
-                    <div className="text-center">
-                        <h1 className="text-white text-sm mb-1">Impacto</h1>
-                        <NumberInput value={factorImpact} onChange={handleImpactChange} maxCount={3}></NumberInput>
+                    <div className="">
+                        <NumberInput value={factorImpact} onChange={handleImpactChange} options={['Impacto', 'Mínimo', 'Notable', 'Radical']}></NumberInput>
                     </div>
-                    <div className=" mt-5">
+                </div>
+                    <div className="flex justify-center mb-1">
                         <button
                             className={`text-white focus:outline-none w-auto rounded-l-md font-bold p-1 pl-2 pr-2 h-8 border-1 border-black transition-colors duration-300 ${
                                 isButtonDisabled ? "bg-gray-500 cursor-not-allowed" : "hover:border-white bg-green-500 cursor-pointer"
@@ -80,7 +79,6 @@ function AddFactor({onAddFactor}){
                             CONTRA
                         </button>
                     </div>
-                </div>
             </div>
         </div>
     )
