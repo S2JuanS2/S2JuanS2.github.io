@@ -1,3 +1,5 @@
+import TypewriterEffect from "../components/TypeWriterEffect";
+
 function Loading() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -6,7 +8,7 @@ function Loading() {
           <div className="flex justify-center">
             <img src="/videos/conec-gif.gif" alt="mant" className="mt-5 mb-5 h-20 w-20"/>
           </div>
-          <p className="text-white font-bold">Iniciando...</p>
+          <p className="text-white font-bold"><TypewriterEffect text={"Iniciando..."} speed={3} delay={0}></TypewriterEffect></p>
         </div>
       </div>
     </div>

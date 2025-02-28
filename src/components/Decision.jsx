@@ -145,9 +145,9 @@ function Decision({ itemsPros, itemsContras }) {
                 </div>
             </div>
             {/*
-            <!-- SERVER CAIDO -->
-            <ServerStatus status={iaStatus}></ServerStatus>
+            <!-- SERVER -->
             */}
+            <ServerStatus></ServerStatus>
         </div>
     );
 }

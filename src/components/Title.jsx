@@ -3,7 +3,7 @@ import Nav from "./Nav";
 
 function Title(){
 
-    const [title, setTitle] = useState("Decisión");
+    const [title, setTitle] = useState("Encabezado de decisión");
     const [isEditing, setIsEditing] = useState(false);
     const [showExamples, setShowExamples] =useState(false);
     const [imageSrc, setImageSrc] = useState("/images/edit.png");

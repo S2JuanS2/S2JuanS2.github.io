@@ -1,23 +1,20 @@
 import { useState, useEffect } from "react";
 
-const ServerStatus = ({ status }) => {
+const ServerStatus = () => {
   const [serverStatus, setServerStatus] = useState({ message: "Revisando conexión...", online: false});
 
   useEffect(() => {
     const checkServer = async () => {
       try {
-        const response = await fetch("https://thinkspick-server.onrender.com/api/health");
+        const response = await fetch("https://thinks-pick-server.onrender.com/api/health");
         if (response.ok) {
           const data = await response.json();
           setServerStatus({message: data.status === "ON" ? "🟢 En línea" : "🔴 Sin conexión", online: true});
-          status(true);
         } else {
           setServerStatus({message: "🔴 Sin conexión", online: false});
-          status(false);
         }
       } catch (error) {
         setServerStatus({message:"🔴 Sin conexión", online:false});
-        status(false);
       }
     };
 
