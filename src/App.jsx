@@ -12,8 +12,15 @@ function App() {
   useEffect(() => {
     const checkServer = async () => {
       try {
-        const response = await fetch("https://squad9-2024-2c.onrender.com/api/projects");
-        setServerStatus(response.ok);
+        const response = await fetch("https://thinkspick-server.onrender.com/api/health");
+        if (response.ok){
+          const data = await response.json();
+          if (data.status === "ON"){
+            setServerStatus(true);
+          } else{
+            setServerStatus(false)
+          }
+        }
       } catch (error) {
         setServerStatus(false);
       }
