@@ -7,7 +7,7 @@ function ReadMore (){
             <Header></Header>
             <div className="flex border-4 pt-35 pb-35 justify-center">
                 <div className="pt-10 pb-10 border-4 border-blue-900 bg-blue-950 rounded-2xl w-10/12 text-center">
-                    <h1 className="text-white font-bold underline underline-offset-4">¿CÓMO TOMAR UNA DECISIÓN?</h1>
+                    <h1 className="text-white font-bold underline underline-offset-4 mb-5">¿CÓMO TOMAR UNA DECISIÓN?</h1>
                     <div className="text-white text-justify pl-5 pr-5">
                         <p>
                         <strong>Titulo de la decisión</strong><br/>
@@ -31,8 +31,14 @@ function ReadMore (){
                         </p>
                     </div>
                     <h1 className="mb-5 mt-10 text-white font-bold underline">CRÉDITOS</h1>
-                    <a href="https://www.flaticon.es/" title="trabajo en equipo iconos" className="text-white underline underline-offset-5">Iconos creados por srip - Flaticon</a>
-                    <a href="https://pixabay.com/es/users/b_chauhan-47828121/?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=16843">Bina Chauhan</a> de <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=16843">Pixabay</a>
+                    <div className="flex flex-col">
+                        <a href="https://www.flaticon.es/" title="trabajo en equipo iconos" className="text-white underline underline-offset-5">Iconos creados por srip - Flaticon</a>
+                        <div className="flex flex-row justify-center">
+                            <a href="https://pixabay.com/es/users/b_chauhan-47828121/?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=16843" className="text-white underline underline-offset-5">Bina Chauhan</a>
+                            <p className="ml-2 mr-2 text-white">de</p>
+                            <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=16843" className="text-white underline underline-offset-5">Pixabay</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <Footer></Footer>

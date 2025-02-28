@@ -1,10 +1,12 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import ThinksPick from "./pages/ThinksPick";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 import Mant from "./pages/Mant";
-import { useEffect, useState } from "react";
 import Loading from "./pages/Loading";
+import Home from "./pages/Home";
 
 function App() {
   const [serverStatus, setServerStatus] = useState(null);
@@ -40,6 +42,7 @@ function App() {
       <Routes>
         {serverStatus ? (
           <>
+            <Route path="/" element={<Home />} />
             <Route path="/thinks-pick" element={<ThinksPick />} />
             <Route path="/thinks-pick/about" element={<About />} />
             <Route path="*" element={<NotFound />} />

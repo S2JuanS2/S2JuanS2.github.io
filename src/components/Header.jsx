@@ -21,7 +21,7 @@ function Header(){
             <div className="flex justify-between pb-5 bg-blue-900">
                 <div className={`mt-5 ${isMobile ? "ml-5" : "ml-45"}`}>
                     <div className="flex flex-row">
-                        <a href="/#/thinks-pick">
+                        <a href="/#">
                             <img src="/images/logo.png" alt="home" className="w-40 h-18 scale-120 transition-transform duration-300 hover:scale-140 cursor-pointer"/>
                         </a>
                     </div>
