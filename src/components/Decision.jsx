@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ServerStatus from "./ServerStatus";
+import Confetti from 'react-confetti';
 
 function Decision({ itemsPros, itemsContras }) {
 
@@ -17,15 +18,7 @@ function Decision({ itemsPros, itemsContras }) {
 
     const [decisionApi, setDecisionApi] = useState("");
 
-    useEffect(() => {
-        if(result !== 0){
-            if(result > 0){
-                alert("SI te conviene.");
-            }else{
-                alert("NO te conviene.")
-            }
-        }
-    }, [result]);
+    const [showConfetti, setShowConfetti] = useState(false);
 
     const iaStatus = (status) => {
 
@@ -48,6 +41,13 @@ function Decision({ itemsPros, itemsContras }) {
         totalContra = totalContra*-1;
         let totalResult = totalPro + totalContra;
         setResult(totalResult);
+
+        if (totalResult > 0) {
+            setShowConfetti(true);
+            setTimeout(() => {
+                setShowConfetti(false);
+            }, 5000);
+        }
     }
 
     const handleClickIa = async () => {
@@ -71,6 +71,9 @@ function Decision({ itemsPros, itemsContras }) {
 
     return (
         <div>
+
+            {showConfetti > 0 && <Confetti width={window.innerWidth} height={window.innerHeight} gravity={0.2}/>}
+
             <div className="flex justify-center mt-10 space-x-10">
                 <div className="flex flex-col items-center">
                     <motion.img
@@ -122,7 +125,25 @@ function Decision({ itemsPros, itemsContras }) {
                     </h3>
                 </div>
             </div>
+            <div className="flex justify-center mt-5">
+                <div className={`w-8/12 flex flex-col items-center border-2 rounded-lg border-blue-950 bg-blue-950 pt-4 space-y-3 
+                                ${result > 0 ? "border-green-400 bg-green-400" : (result === 0 ? "border-yellow-500 bg-yellow-500" : "border-red-400 bg-red-400")}
+                                `}>
+                    <div>
+                        { result > 0 ? (
+                            <h1 className="text-white font-bold">Resultado: <span className="">FAVORABLE</span></h1>
+                        ) : result === 0 ?(
+                            <h1 className="text-white font-bold">Resultado: <span className="">INDEFINIDO</span></h1>
+                        ) : (
+                            <h1 className="text-white font-bold">Resultado: <span>NO FAVORABLE</span></h1>
+                        )};
+                    </div>
+                </div>
+            </div>
+            {/*
+            <!-- SERVER CAIDO -->
             <ServerStatus status={iaStatus}></ServerStatus>
+            */}
         </div>
     );
 }
