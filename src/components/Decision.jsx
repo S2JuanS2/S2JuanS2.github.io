@@ -14,18 +14,34 @@ function Decision({ itemsPros, itemsContras }) {
     const [jumpAzar, setJumpAzar] = useState(false);
     const [jumpIA, setJumpIA] = useState(false);
     const [result, setResult] = useState(0);
-    const [isOffline, setServerStatus] = useState(true);
-
-    const [decisionApi, setDecisionApi] = useState("");
 
     const [showConfetti, setShowConfetti] = useState(false);
 
-    const iaStatus = (status) => {
-
-    }
-
     const azar = () => {
-
+        let max = itemsContras.length + itemsPros.length;
+        if (max !== 0){
+            const min = 1;
+            let resultRandom = Math.floor(Math.random() * (max - min + 1)) + min;
+            if (itemsPros.length > itemsContras.length){
+                if(resultRandom > itemsPros.length){
+                    setResult(-1);
+                }else{
+                    setResult(1);
+                }
+            }else if (itemsPros.length < itemsContras.length){
+                if (resultRandom > itemsContras.length){
+                    setResult(1);
+                }else{
+                    setResult(-1);
+                }
+            }else{
+                if(resultRandom > itemsPros.length){
+                    setResult(-1);
+                }else{
+                    setResult(1);
+                }
+            }
+        }
     }
 
     const calculate = () => {
@@ -50,14 +66,8 @@ function Decision({ itemsPros, itemsContras }) {
         }
     }
 
-    const handleClickIa = async () => {
-        try {
-            const response = await fetch("http://localhost:8080/api/decision");
-            const data = await response.text();
-            setDecisionApi(data);
-        }catch(error){
-            console.error("Server Off", );
-        }
+    const ia = async () => {
+
     }
       
     const playSound = (sound) =>{
@@ -84,7 +94,7 @@ function Decision({ itemsPros, itemsContras }) {
                         transition={{ duration: 0.4 }}
                     />
                     <h3 className="font-serif text-blue-300 mt-2 cursor-pointer underline"
-                        onClick={() => {handleJump(setJumpTarget), playSound(audioCalculate), calculate()}}
+                        onClick={() => {handleJump(setJumpTarget), calculate(), playSound(audioCalculate)}}
                         >
                         Cálculo
                     </h3>
@@ -99,12 +109,12 @@ function Decision({ itemsPros, itemsContras }) {
                         
                     />
                     <h3 className="font-serif text-blue-300 mt-2 cursor-pointer underline"
-                        onClick={() => { handleJump(setJumpAzar), playSound(audioAzar), azar(); }}
+                        onClick={() => { handleJump(setJumpAzar), azar(), playSound(audioAzar); }}
                         >
                         Azar
                     </h3>
                 </div>
-                <div className={`flex flex-col items-center ${isOffline ? "opacity-20" : "hover:border-white"}`}>
+                <div className="flex flex-col items-center">
                     <motion.img
                         src="/images/ia.png"
                         alt="target"
@@ -112,14 +122,8 @@ function Decision({ itemsPros, itemsContras }) {
                         animate={jumpIA ? { y: [0, -10, 0, -5, 0] } : {}}
                         transition={{ duration: 0.4 }}
                     />
-                    <h3 className={`font-serif text-blue-300 mt-2 cursor-pointer underline ${isOffline ? "cursor-wait" : "hover:border-white"}`}
-                        onClick={() => {
-                            if (!isOffline) {
-                                handleJump(setJumpIA);
-                                handleClickIa();
-                                playSound(audioIa);
-                            }
-                        }}
+                    <h3 className="font-serif text-blue-300 mt-2 cursor-pointer underline"
+                        onClick={() => { handleJump(setJumpIA), ia(), playSound(audioIa); }}
                         >
                         IA
                     </h3>
