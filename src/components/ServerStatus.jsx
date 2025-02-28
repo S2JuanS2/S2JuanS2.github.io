@@ -27,7 +27,7 @@ const ServerStatus = ({ status }) => {
   }, []);
 
   return (
-    <div className="flex flex-row justify-center p-4 rounded-lg text-center">
+    <div className="flex flex-row justify-center p-4 mt-4 rounded-lg text-center">
       <h2 className="text-sm font-semibold text-white pr-2">Estado del Servidor:</h2>
       {serverStatus.online ? (
         <p className="text-sm text-green-500">{serverStatus.message}</p>

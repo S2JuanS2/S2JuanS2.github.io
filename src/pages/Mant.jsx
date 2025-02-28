@@ -1,5 +1,3 @@
-import Footer from "../components/Footer";
-
 function Mant() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -12,7 +10,6 @@ function Mant() {
           <p className="text-white">El sitio esta actualmente bajo mantenimiento.</p>
         </div>
       </div>
-      <Footer className="mt-auto" />
     </div>
   );
 }

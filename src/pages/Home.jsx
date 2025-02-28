@@ -6,7 +6,7 @@ function Home (){
         <div className="flex flex-col min-h-screen">
             <Header />
             <div className="flex flex-grow justify-center items-center">
-                <div className="pt-8 border-4 border-blue-900 bg-blue-950 rounded-2xl w-10/12 h-80 text-center">
+                <div className="pt-8 border-4 border-blue-900 bg-blue-950 rounded-2xl w-10/12 h-100 text-center">
                     <h1 className="text-white font-bold underline underline-offset-2">Bienvenido a Thinks & Pick!</h1>
                     <p className="text-white">El sitio actualmente se encuentra en desarrollo.</p>
                     <p className="text-white">La API se encuentra alojada en un servidor gratuito.</p>
