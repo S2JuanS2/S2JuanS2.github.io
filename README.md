@@ -13,12 +13,13 @@
 </div>
 
 ## Introducción
-###Análisis de decisiones basado en pros y contras
+<h3>Análisis de decisiones basado en pros y contras</h3>
 Esta aplicación web permite evaluar una decisión mediante un cálculo basado en los pros y contras definidos por el usuario. El sistema asigna un peso a cada factor y, a partir de un algoritmo de análisis, genera una recomendación objetiva.
 
 El proceso consiste en:
 
 Ingresar la decisión a evaluar.
+
 Listar los pros y contras, asignando un peso o importancia a cada uno.
 Calcular un resultado, donde el sistema analiza la información y devuelve una sugerencia basada en la comparación cuantitativa de los factores.
 Este enfoque permite estructurar el proceso de toma de decisiones, reduciendo la subjetividad y brindando una visión más clara sobre la mejor opción disponible.
@@ -35,12 +36,6 @@ Este enfoque permite estructurar el proceso de toma de decisiones, reduciendo la
 <div>
    <a href="s2juans2.github.io"></a>
 </div>
-
-### Stack backend
-
-- [![Spring boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
-- [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-- [![Junit5](https://img.shields.io/badge/Junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white)](https://junit.org/junit5/)
 
 ### Stach Frontend
 
