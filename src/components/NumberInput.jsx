@@ -26,7 +26,7 @@ function NumberInput({ value = 0, onChange, options }) {
           />
           <div
             className={`${
-                index === 0 ? "pb-3 rounded-sm"
+                index === 0 ? "pb-3 rounded-none rounded-t-lg bg-blue-950 cursor-default"
               : count === index ? "bg-blue-800" : "bg-gray-700"
             } text-white text-sm p-2 pb-3 h-8 flex items-center justify-center rounded-lg font-bold border-2 border-gray-800 hover:border-gray-400 transition-colors duration-300`}
           >

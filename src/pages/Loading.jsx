@@ -8,8 +8,8 @@ function Loading() {
           <div className="flex justify-center">
             <img src="/videos/conec-gif.gif" alt="mant" className="mt-5 mb-5 h-20 w-20"/>
           </div>
-          <p className="text-white"><TypewriterEffect text={"API alojada en un servidor gratuito."} speed={50} delay={0}></TypewriterEffect></p>
-          <p className="text-white font-bold"><TypewriterEffect text={"Iniciando servidor..."} speed={3} delay={3}></TypewriterEffect></p>
+          <h2 className="text-white"><TypewriterEffect text={"API alojada en un servidor gratuito."} speed={50} delay={0}></TypewriterEffect></h2>
+          <h2 className="text-white font-bold"><TypewriterEffect text={"Iniciando servidor..."} speed={3} delay={3}></TypewriterEffect></h2>
         </div>
       </div>
     </div>

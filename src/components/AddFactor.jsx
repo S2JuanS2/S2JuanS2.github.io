@@ -41,7 +41,7 @@ function AddFactor({onAddFactor}){
 
     return(
         <div>
-            <h1 className="text-white mb-1 mt-4">Piensa...</h1>   
+            <h1 className="text-white mb-1 mt-4">Nueva pro o contra:</h1>   
             <div className="flex flex-col">
                 <textarea   
                     className="border-2 border-blue-400 text-white rounded-b-md resize-none overflow-auto h-9 pl-2 pr-2 pt-1 mr-2 mb-4 bg-gray-900" 
@@ -53,10 +53,10 @@ function AddFactor({onAddFactor}){
                 />
                 <div className="flex justify-center space-x-10 mb-5 ml-3">
                     <div className="mb-4">
-                        <NumberInput value={factorWeight} onChange={handleWeightChange} options={['Peso', 'Insignificante', 'Mínimo', 'Moderado', 'Significativo', 'Crucial']}></NumberInput>
+                        <NumberInput value={factorWeight} onChange={handleWeightChange} options={['PESO', 'Insignificante', 'Mínimo', 'Moderado', 'Significativo', 'Crucial']}></NumberInput>
                     </div>
                     <div className="">
-                        <NumberInput value={factorImpact} onChange={handleImpactChange} options={['Impacto', 'Mínimo', 'Notable', 'Radical', 'Profundo', 'Revolucionario']}></NumberInput>
+                        <NumberInput value={factorImpact} onChange={handleImpactChange} options={['IMPACTO', 'Mínimo', 'Notable', 'Radical', 'Profundo', 'Revolucionario']}></NumberInput>
                     </div>
                 </div>
                     <div className="flex justify-center mb-1">

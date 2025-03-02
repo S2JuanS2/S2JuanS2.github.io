@@ -4,7 +4,10 @@ import Card from './Card';
 function CardList({customClass, title, items, onDelete, type}){
     return(
         <div className="w-6/12">
-            <h1 className={`${customClass} font-bold text-sm border-t-2 border-l-2 border-r-2 w-40 pl-2 bg-blue-950 rounded-t-md`}>{title} | {items.length}</h1>
+            <div className={`${customClass} flex flex-row justify-between border-t-2 border-l-2 border-r-2 w-40 pl-2 pr-2 pt-1 bg-blue-950 rounded-t-md`}>
+                <h1 className="font-bold text-sm">{title} | {items.length}</h1>
+                <img src="/images/borrar.png" alt="borrar" className='w-4 h-4 cursor-pointer'/>
+            </div>
             <div className={`${customClass} border-2 min-h-53 pb-2 rounded-x-md rounded-b-md bg-blue-950`}>
                 {items.length === 0 ? (
                     <h1 className='text-center mt-20 text-blue-300'>Vacío</h1>

@@ -130,17 +130,18 @@ function Decision({ itemsPros, itemsContras }) {
                 </div>
             </div>
             <div className="flex justify-center mt-5">
-                <div className={`w-8/12 flex flex-col items-center border-2 rounded-lg border-blue-950 bg-blue-950 pt-4 space-y-3 
+                <div className={`w-8/12 flex flex-col mt-5 mb-5 items-center border-2 rounded-lg border-blue-950 bg-blue-950 pt-4 space-y-3 
                                 ${result > 0 ? "border-green-400 bg-green-400" : (result === 0 ? "border-yellow-500 bg-yellow-500" : "border-red-400 bg-red-400")}
                                 `}>
-                    <div>
+                    <div className="text-center pb-5">
+                        <h1 className="text-white font-bold">Resultado</h1>
                         { result > 0 ? (
-                            <h1 className="text-white font-bold">Resultado: <span className="">FAVORABLE</span></h1>
+                            <h1 className="text-white font-bold">FAVORABLE</h1>
                         ) : result === 0 ?(
-                            <h1 className="text-white font-bold">Resultado: <span className="">INDEFINIDO</span></h1>
+                            <h1 className="text-white font-bold">INDEFINIDO</h1>
                         ) : (
-                            <h1 className="text-white font-bold">Resultado: <span>NO FAVORABLE</span></h1>
-                        )};
+                            <h1 className="text-white font-bold">NO FAVORABLE</h1>
+                        )}
                     </div>
                 </div>
             </div>

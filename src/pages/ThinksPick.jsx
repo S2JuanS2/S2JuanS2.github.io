@@ -27,7 +27,7 @@ function ThinksPick(){
         <div>
         <Header></Header>
         <div className="ml-5 mr-5"> {/* cambia */}
-          <div className="flex">
+          <div className="flex justify-center">
             <Title></Title>
           </div>
           <Board></Board>
@@ -43,7 +43,7 @@ function ThinksPick(){
       <div>
         <Header></Header>
         <div className="ml-45 mr-45">
-          <div className="flex">
+          <div className="flex justify-center">
             <Title></Title>
           </div>
           <Board></Board>

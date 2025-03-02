@@ -40,7 +40,7 @@ function Header(){
                     </div>
                 </div>
             </div>
-            <hr className="border-1 border-blue-700"/>
+            <hr className="border-1 border-blue-950"/>
         </div>
     );
 }

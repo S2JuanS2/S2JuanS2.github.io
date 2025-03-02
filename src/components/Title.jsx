@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Nav from "./Nav";
 
 function Title(){
 
@@ -67,13 +66,12 @@ function Title(){
                     </div>
                 )}
             </div>
-            <div className="flex">
+            <div className="flex justify-center">
                 <img 
                     src="/images/toma-de-decisiones.png" 
                     alt="confused" 
                     className="shadow-lg mt-2 ml-2 h-20 w-20 mb-4"
                 />
-                <Nav></Nav>
             </div>
         </div>
     );
