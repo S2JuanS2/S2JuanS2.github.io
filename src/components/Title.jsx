@@ -1,11 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Title(){
 
-    const [title, setTitle] = useState("Encabezado de decisión");
+    const [title, setTitle] = useState("");
     const [isEditing, setIsEditing] = useState(false);
     const [showExamples, setShowExamples] =useState(false);
     const [imageSrc, setImageSrc] = useState("/images/edit.png");
+
+    useEffect(() => {
+        if(title){
+            localStorage.setItem("title", title);
+        }
+
+    }, [title]);
+
+    useEffect(() => {
+        const titleSave = localStorage.getItem("title");
+        if (titleSave){
+            setTitle(titleSave);
+        }else{
+            setTitle("Título de la decisión");
+        }
+    }, [])
 
     const handleInputChange = (e) => {
         setTitle(e.target.value);
