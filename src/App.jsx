@@ -9,7 +9,7 @@ import Loading from "./pages/Loading";
 import Home from "./pages/Home";
 
 function App() {
-  const [serverStatus, setServerStatus] = useState(false);
+  const [serverStatus, setServerStatus] = useState(true);
 
   {/*
     <-- SERVER -->

@@ -147,9 +147,9 @@ function Decision({ itemsPros, itemsContras }) {
             </div>
             {/*
             <!-- SERVER -->
-            */}
             <Chat></Chat>
             <ServerStatus></ServerStatus>
+            */}
         </div>
     );
 }
