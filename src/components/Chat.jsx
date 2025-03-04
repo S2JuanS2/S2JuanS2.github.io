@@ -10,7 +10,7 @@ const Chat = () => {
     // Cargar mensajes desde la base de datos al iniciar
     fetch("https://thinks-pick-server.onrender.com/api/messages")
       .then(response => response.json())
-      .then(data => setMessages(data.map(msg => `${msg.sessionId}: ${msg.message}`)))
+      .then(data => setMessages(data.map(msg => `${msg.message}`)))
       .catch(error => console.error("Error al cargar mensajes:", error));
 
     socket.onmessage = (event) => {
