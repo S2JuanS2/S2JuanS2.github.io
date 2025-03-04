@@ -4,8 +4,7 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
   const [userName, setUserName] = useState("Anonimo");
-  const socket = new WebSocket('ws://thinks-pick-server.onrender.com/chat');
-
+  const socket = new WebSocket("wss://thinks-pick-server.onrender.com/chat");
 
   useEffect(() => {
     socket.onmessage = (event) => {
