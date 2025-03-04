@@ -9,37 +9,37 @@ import Loading from "./pages/Loading";
 import Home from "./pages/Home";
 
 function App() {
-  const [serverStatus, setServerStatus] = useState(null);
+  const [serverStatus, setServerStatus] = useState(true);
 
   {/*
     <-- SERVER -->
-  */}
-
-  useEffect(() => {
-    const checkServer = async () => {
-      try {
-        const response = await fetch("https://thinks-pick-server.onrender.com/api/health");
-        if (response.ok){
-          const data = await response.json();
-          if (data.status === "ON"){
-            setServerStatus(true);
-          } else{
-            setServerStatus(false)
+    useEffect(() => {
+      const checkServer = async () => {
+        try {
+          const response = await fetch("https://thinks-pick-server.onrender.com/api/health");
+          if (response.ok){
+            const data = await response.json();
+            if (data.status === "ON"){
+              setServerStatus(true);
+            } else{
+              setServerStatus(false)
+            }
           }
+        } catch (error) {
+          setServerStatus(false);
         }
-      } catch (error) {
-        setServerStatus(false);
-      }
-    };
+      };
+    
+      checkServer();
+      const interval = setInterval(checkServer, 60000);
+      return () => clearInterval(interval);
+    }, []);
   
-    checkServer();
-    const interval = setInterval(checkServer, 60000);
-    return () => clearInterval(interval);
-  }, []);
+    if (serverStatus === null) {
+      return <Loading></Loading>;
+    }
+    */}
 
-  if (serverStatus === null) {
-    return <Loading></Loading>;
-  }
 
   return (
     <Router>

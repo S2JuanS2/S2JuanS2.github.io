@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ServerStatus from "./ServerStatus";
 import Confetti from 'react-confetti';
+import Chat from "./Chat";
 
 function Decision({ itemsPros, itemsContras }) {
 
-    
     const audioCalculate = new Audio("/sounds/resolve.mp3");
     const audioAzar = new Audio("/sounds/slot.mp3");
     const audioIa = new Audio("/sounds/ia.mp3");
@@ -148,6 +148,7 @@ function Decision({ itemsPros, itemsContras }) {
             {/*
             <!-- SERVER -->
             */}
+            <Chat></Chat>
             <ServerStatus></ServerStatus>
         </div>
     );
