@@ -1,7 +1,8 @@
 import { Navigate, Outlet } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const PrivateRoute = () => {
-  const token = localStorage.getItem("token");
+  const token = Cookies.get("jwtAuth")
   return token ? <Outlet /> : <Navigate to="/login" />;
 };
 

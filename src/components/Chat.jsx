@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import Cookies from 'js-cookie';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -8,7 +9,7 @@ const Chat = () => {
   const socket = new WebSocket("wss://thinks-pick-server.onrender.com/chat");
 
   axios.get("https://thinks-pick-server.onrender.com/api/v1/demo", {
-    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    headers: { Authorization: `Bearer ${Cookies.get("jwtAuth")}` }
   })
     .then(response => setUserName(response.data))
     .catch(error => console.error("Error:", error));
@@ -52,13 +53,14 @@ const Chat = () => {
             className="p-2 border rounded-lg mb-2 text-white"
             placeholder="Escribe un mensaje"
         />
-        <div className='flex justify-center'>
+        <div className='flex justify-end'>
             <input 
                 type="text" 
-                value={userName} 
-                className='border-1 text-white rounded-l-lg pl-4'
+                value={userName}
+                readOnly
+                className='border-1 text-white rounded-l-lg pl-4 text-end pr-4 font-bold'
             />
-            <button onClick={sendMessage} className="px-4 py-2 border-1 bg-blue-500 text-white rounded-r-lg w-30 cursor-pointer hover:border-white">
+            <button onClick={sendMessage} className="px-2 py-1 border-1 bg-blue-500 text-white rounded-r-lg w-30 cursor-pointer hover:border-white">
                 Enviar
             </button>
         </div>

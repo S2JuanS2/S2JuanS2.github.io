@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { login } from "../services/AuthService";
-import { Navigate, useNavigate } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -12,7 +15,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const data = await login(username, password);
-      localStorage.setItem("token", data.token); // Guardar token
+      Cookies.set("jwtAuth", data.token, { expires: 1/72 });
       navigate("/");
     } catch (err) {
       setError(err);
@@ -21,17 +24,23 @@ const Login = () => {
 
   return (
     <div>
-        <div className="w-6/12 flex flex-col text-center">
-            <h2 className="text-white font-bold">Login</h2>
+      <div className="flex flex-col min-h-screen">
+        <Header></Header>
+        <div className="flex flex-col text-center">
             {error && <p style={{ color: "red" }}>{error.message}</p>}
         </div>
         <form onSubmit={handleLogin} className="text-white">
-            <div className="flex flex-col w-6/12 items-center border-2 p-4 space-y-2">
-                <input className="border-1 p-1" type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-                <input className="border-1 p-1" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                <button className="cursor-pointer border-1 bg-white rounded-sm text-black w-15" type="submit">Login</button>
+            <div className="mt-40 flex flex-col m-6 items-center border-1 border-blue-800 rounded-2xl bg-blue-950 p-4 space-y-2">
+                <h2 className="text-white font-bold">iniciar sesión</h2>
+                <input className="border-b-1 p-1" type="text" placeholder="Usuario" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <input className="border-b-1 p-1" type="password" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <button className="mt-4 pl-4 pr-4 cursor-pointer border-1 bg-blue-500 rounded-sm text-white border-blue" type="submit">Ingresar</button>
             </div>
         </form>
+        <div className="mt-auto">
+          <Footer></Footer>
+        </div>
+      </div>
     </div>
   );
 };
