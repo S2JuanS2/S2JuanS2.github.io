@@ -6,7 +6,7 @@ const ServerStatus = () => {
   useEffect(() => {
     const checkServer = async () => {
       try {
-        const response = await fetch("https://thinks-pick-server.onrender.com/api/health");
+        const response = await fetch("https://thinks-pick-server.onrender.com/auth/health");
         if (response.ok) {
           const data = await response.json();
           setServerStatus({message: data.status === "ON" ? "🟢 En línea" : "🔴 Sin conexión", online: true});
