@@ -9,16 +9,21 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const data = await login(username, password);
       Cookies.set("jwtAuth", data.token, { expires: 1/72 });
       navigate("/");
     } catch (err) {
       setError(err);
+    } finally{
+      setPassword("");
+      setLoading(false);
     }
   };
 
@@ -47,12 +52,17 @@ const Login = () => {
                   value={password} onChange={(e) => setPassword(e.target.value)} 
                 />
               { error ? (
-                  <p className="text-red-500">Error al iniciar sesión</p>
+                  <p className="text-red-500">{error}</p>
                 ) : (
                   <p className="p-3"> </p>
                 )}
-                <a href="/#/register" className="text-sm underline underline-offset-2">Registrarse</a>
-                <button className="mt-4 pl-4 pr-4 cursor-pointer border-1 bg-blue-500 rounded-sm text-white border-blue" type="submit">Ingresar</button>
+                <button className="mb-4 pl-4 pr-4 cursor-pointer border-1 bg-blue-500 rounded-sm text-white border-blue" type="submit">Ingresar</button>
+                {loading && (
+                  <div className="flex justify-center">
+                    <div className="w-6 h-6 border-4 border-t-white border-gray-500 rounded-full animate-spin"></div>
+                  </div>
+                )}
+                <p>¿No tienes cuenta en Thinks & Pick? <a href="/#/register" className="text-sm underline underline-offset-2">Regístrate</a></p>
             </div>
         </form>
         <div className="mt-auto">

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
-import Cookies from 'js-cookie';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -8,13 +6,9 @@ const Chat = () => {
   const [userName, setUserName] = useState("Anonimo");
   const socket = new WebSocket("wss://thinks-pick-server.onrender.com/chat");
 
-  axios.get("https://thinks-pick-server.onrender.com/api/v1/demo", {
-    headers: { Authorization: `Bearer ${Cookies.get("jwtAuth")}` }
-  })
-    .then(response => setUserName(response.data))
-    .catch(error => console.error("Error:", error));
-
   useEffect(() => {
+
+    setUserName(localStorage.getItem("userName"))
     // Cargar mensajes desde la base de datos al iniciar
     fetch("https://thinks-pick-server.onrender.com/api/messages")
       .then(response => response.json())

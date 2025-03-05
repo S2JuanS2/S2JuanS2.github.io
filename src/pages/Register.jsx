@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 const Register = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [userData, setUserData] = useState({
     username: "",
     password: "",
@@ -20,12 +21,15 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const data = await register(userData);
       Cookies.set("jwtAuth", data.token, { expires: 1/72 });
       navigate("/");
     } catch (err) {
       setError(err);
+    } finally{
+      setLoading(false);
     }
   };
 
@@ -54,6 +58,8 @@ const Register = () => {
               name="username"
               value={userData.username}
               onChange={handleChange}
+              required
+              maxLength={20}
             />
             <input
               className="border-b-1 p-1"
@@ -62,6 +68,8 @@ const Register = () => {
               name="password"
               value={userData.password}
               onChange={handleChange}
+              required
+              maxLength={24}
             />
             <input
               className="border-b-1 p-1"
@@ -70,6 +78,8 @@ const Register = () => {
               name="firstname"
               value={userData.firstname}
               onChange={handleChange}
+              required
+              maxLength={50}
             />
             <input
               className="border-b-1 p-1"
@@ -78,6 +88,8 @@ const Register = () => {
               name="lastname"
               value={userData.lastname}
               onChange={handleChange}
+              required
+              maxLength={50}
             />
             <input
               className="border-b-1 p-1"
@@ -86,13 +98,26 @@ const Register = () => {
               name="country"
               value={userData.country}
               onChange={handleChange}
+              required
+              maxLength={32}
             />
+            { error ? (
+                  <p className="text-red-500">{error}</p>
+                ) : (
+                  <p className="p-3"> </p>
+                )}
             <button
               className="mt-4 pl-4 pr-4 cursor-pointer border-1 bg-blue-500 rounded-sm text-white border-blue"
               type="submit"
             >
-              Registrarse
+            Registrarse
             </button>
+            {loading && (
+              <div className="flex justify-center mt-2">
+                    <div className="w-6 h-6 border-4 border-t-white border-gray-500 rounded-full animate-spin"></div>
+                  </div>
+            )}
+            <p className="mt-4">¿Ya tienes cuenta? <a href="/#/login" className="text-sm underline underline-offset-2 mt-2">Inicia sesión</a></p>
           </div>
         </form>
         <div className="mt-auto">
