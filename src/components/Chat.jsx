@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import axios from "axios";
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
   const [userName, setUserName] = useState("Anonimo");
   const socket = new WebSocket("wss://thinks-pick-server.onrender.com/chat");
+
+  axios.get("https://thinks-pick-server.onrender.com/api/v1/demo", {
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+  })
+    .then(response => setUserName(response.data))
+    .catch(error => console.error("Error:", error));
 
   useEffect(() => {
     // Cargar mensajes desde la base de datos al iniciar
@@ -49,7 +56,6 @@ const Chat = () => {
             <input 
                 type="text" 
                 value={userName} 
-                onChange={(e) => setUserName(e.target.value)}
                 className='border-1 text-white rounded-l-lg pl-4'
             />
             <button onClick={sendMessage} className="px-4 py-2 border-1 bg-blue-500 text-white rounded-r-lg w-30 cursor-pointer hover:border-white">

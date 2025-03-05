@@ -1,17 +1,8 @@
 import { useState, useEffect} from "react";
-import axios from "axios";
 
 function Header(){
     
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-    const [userName, setUserName] = useState("");
-
-    axios.get("https://thinks-pick-server.onrender.com/api/v1/demo", {
-      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
-    })
-      .then(response => setUserName(response.data))
-      .catch(error => console.error("Error:", error));
-    
 
     useEffect(() => {
 
@@ -45,7 +36,7 @@ function Header(){
                         <a href="https://github.com/S2JuanS2">
                             <img src="/images/user-img.png" alt="user" className="w-12 h-12  transition-transform duration-300 hover:scale-120 cursor-pointer"/>
                         </a>
-                        <p className="font-bold text-blue-400 pt-1 text-sm">{userName}</p>
+                        <p className="font-bold text-blue-400 pt-1 text-sm">Dev</p>
                     </div>
                 </div>
             </div>
