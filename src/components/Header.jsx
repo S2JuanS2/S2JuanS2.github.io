@@ -6,7 +6,7 @@ function Header(){
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     const [userName, setUserName] = useState("");
 
-    axios.get("http://localhost:8080/api/v1/demo", {
+    axios.get("https://thinks-pick-server.onrender.com/api/v1/demo", {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
     })
       .then(response => setUserName(response.data))
