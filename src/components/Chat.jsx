@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
   const [userName, setUserName] = useState("Anonimo");
-  const socket = new WebSocket("wss://thinks-pick-server.onrender.com/chat");
+  const socket = useRef(null);
 
   useEffect(() => {
 
@@ -15,15 +15,18 @@ const Chat = () => {
       .then(data => setMessages(data.map(msg => `${msg.message}`)))
       .catch(error => console.error("Error al cargar mensajes:", error));
 
-    socket.onmessage = (event) => {
+    socket.current = new WebSocket("wss://thinks-pick-server.onrender.com/chat");
+
+    socket.current.onmessage = (event) => {
       setMessages((prevMessages) => [...prevMessages, event.data]);
     };
+
   }, []);
 
   const sendMessage = () => {
     if(message.length !== 0){
         const userMsg = (userName + ": " + message);
-        socket.send(userMsg);
+        socket.current.send(userMsg);
         setMessage('');
     }
   };
@@ -52,7 +55,7 @@ const Chat = () => {
                 type="text" 
                 value={userName}
                 readOnly
-                className='border-1 text-white rounded-l-lg pl-4 text-end pr-4 font-bold'
+                className='border-1 text-white rounded-l-lg pl-4 text-end pr-4 font-bold w-full'
             />
             <button onClick={sendMessage} className="px-2 py-1 border-1 bg-blue-500 text-white rounded-r-lg w-30 cursor-pointer hover:border-white">
                 Enviar
